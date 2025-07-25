@@ -1,0 +1,2 @@
+gradient background color tailwind : 
+bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#3b82f6]

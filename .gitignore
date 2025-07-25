@@ -1,0 +1,54 @@
+# Node modules
+node_modules/
+.serverless/
+.cache/
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*.local
+.env.local
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs & editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Test coverage
+coverage/
+
+# Local development
+*.local
+*.log
+
+# Production build
+/public/static/
+/public/*.zip
+
+# Misc
+*.tgz
+*.tar.gz
+*.lock
+package-lock.json
+yarn.lock
+
+# VS Code settings
+.vscode/*
+!.vscode/settings.json
+
+# Mac folder attributes
+.AppleDouble
+.LSOverride
