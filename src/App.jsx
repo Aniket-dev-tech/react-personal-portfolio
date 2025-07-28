@@ -5,6 +5,8 @@ import Projects from './components/Projects';
 import About from './components/About';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import CertificationsSection from './components/CertificationsSection';
+import ContactSection from './components/ContactSection'
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <About />
       <ExperienceTimeline />
       <CertificationsSection />
+      <ContactSection />
       {/* Add other components like Contact, Footer, etc. here */}
     </div>
   );

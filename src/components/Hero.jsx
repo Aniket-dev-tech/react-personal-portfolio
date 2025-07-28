@@ -3,6 +3,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ProfileImage from "./ProfileImage";
 import HeroText from "./HeroText";
+import Navbar from "./Navbar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,18 +13,20 @@ function Hero() {
   useEffect(() => {
     const el = heroRef.current;
 
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: "#skills",
-        start: "top center+=100",
-        scrub: true,
-      },
-    }).to(el, {
-      y: -150,
-      scaleX: 0.85,
-      scaleY: 0.95,
-      ease: "elastic",
-    });
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#skills",
+          start: "top center+=100",
+          scrub: true,
+        },
+      })
+      .to(el, {
+        y: -150,
+        scaleX: 0.85,
+        scaleY: 0.95,
+        ease: "elastic",
+      });
   }, []);
 
   return (
