@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 function ContactForm() {
   const [isSuccess, setIsSuccess] = useState(false);
+  const [name, setName] = useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -25,6 +26,7 @@ function ContactForm() {
     if (res.success) {
       setIsSuccess(true);
       event.target.reset();
+      setName(""); // Optional: reset name display after success
     }
   };
 
@@ -36,7 +38,7 @@ function ContactForm() {
       className="w-full max-w-md mx-auto bg-white/5 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-[0_0_40px_#00f0ff33] space-y-4"
     >
       <h3 className="text-2xl font-bold text-center text-white tracking-wide mb-4">
-        Get in Touch
+        Get in Touch{ name && `, ${name}`}
       </h3>
 
       {/* Input Fields */}
@@ -47,6 +49,7 @@ function ContactForm() {
           name={field}
           placeholder={field === "email" ? "you@example.com" : "Your Name"}
           required
+          onChange={field === "name" ? (e) => setName(e.target.value) : undefined}
           whileHover={{ scale: 1.02, boxShadow: "0 0 15px #00f0ff44" }}
           transition={{ duration: 0.2 }}
           className="w-full px-4 py-3 bg-white/10 text-white rounded-lg border border-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:bg-white/5 placeholder:text-gray-400 transition-all"

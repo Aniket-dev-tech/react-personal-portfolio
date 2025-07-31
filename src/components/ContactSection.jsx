@@ -27,9 +27,7 @@ function ContactSection() {
         className="w-full max-w-6xl flex flex-col lg:flex-row items-center justify-between gap-16 leading-tighter"
       >
           <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-2">
-          <h3 className="text-2xl font-bold text-center text-white tracking-wide mb-4">
-            Find Me Here
-          </h3>
+         
             <div className="flex items-center justify-center gap-4 cursor-pointer overflow-visible min-h-[4rem] leading-tight">
               <img
                 src="../icons/ig-instagram-icon.png"

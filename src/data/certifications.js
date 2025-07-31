@@ -12,18 +12,18 @@ const certifications = [
   },
   {
     id: 3,
-    title: "TailwindCSS Pro",
-    image: "./src/assets/certificates/c1.jpg",
+    title: "Gen Ai Certificate",
+    image: "./src/assets/certificates/Gen-AI.png",
   },
   {
     id: 4,
     title: "PostgreSQL Basics",
-    image: "./src/assets/certificates/c2.jpg",
+    image: "./src/assets/certificates/LLM_Google.png",
   },
 {
     id: 5,
     title: "React Fundamentals",
-    image: "./src/assets/certificates/c3.jpg",
+    image: "./src/assets/certificates/Simplilearn-AI-Certificate.png",
 },
   
   // Add more as needed

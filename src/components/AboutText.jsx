@@ -11,7 +11,7 @@ function AboutText() {
       transition={{ duration: 0.8, delay: 0.2 }}
     >
       <p className="text-[8rem] leading-[140px] text-center tracking-tighter font-bold">
-        <span className="text-blue-400">About Me,</span> a Web Developer living in India
+        <span className="text-blue-400">About Me,</span> a Web Developer and Designer
       </p>
     </motion.div>
   );

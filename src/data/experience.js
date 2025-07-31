@@ -18,10 +18,16 @@ const experienceData = [
     description: "Explored agentic artificial intelligence, generative AI, and reinforcement learning concepts through Udemy courses, focusing on practical applications and hands-on projects.",
   },
   {
-    role: "Python Programming",
-    company: "Documentations, Youtube Tutorials",
+    role: "Introduction to Large Language Models",
+    company: "Simplilearn",
+    date: "July 2025",
+    description: "Explored the fundamentals of agentic AI, generative models, and reinforcement learning through Simplilearn course, focusing on conceptual understanding and real-world relevance.",
+  },
+  {
+    role: "Introduction to Artificial Intelligence",
+    company: "Documentations, Youtube Tutorials, Simplilearn",
     date: "",
-    description: "Gained proficiency in Python by studying official documentation and following Youtube tutorials. Applied Python in various projects, focusing on automation, data analysis, and scripting."
+    description: "Built a foundational understanding of AI concepts, guided by official documentation, YouTube tutorials, and Simplilearn materials, with emphasis on core principles and practical applications."
   }
 ];
 
