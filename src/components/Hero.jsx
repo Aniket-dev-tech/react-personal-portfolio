@@ -30,13 +30,16 @@ function Hero() {
   }, []);
 
   return (
-    <section className="w-full bg-black relative overflow-hidden">
+    <section className="w-full bg-black relative overflow-hidden" id="hero">
+      <Navbar />
       <div
         ref={heroRef}
         className="mx-auto w-full transition-all duration-500 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#3b82f6] rounded-b-xl"
       >
-        <div className="min-h-screen flex flex-col items-center justify-center px-4 md:px-8 text-white gap-10 md:flex-row md:gap-20">
-          <ProfileImage />
+        <div className="min-h-screen flex flex-col md:flex-row items-center justify-center px-4 md:px-8 text-white gap-10 md:gap-20 py-10">
+          <div className="flex-shrink-0">
+            <ProfileImage />
+          </div>
           <HeroText />
         </div>
       </div>
