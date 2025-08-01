@@ -1,77 +1,126 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import experienceData from "../data/experience";
-import { Briefcase, Brain } from "lucide-react"; // Use icons from lucide-react or add your custom SVGs
+import { Briefcase, Brain } from "lucide-react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const icons = {
   "Frontend Developer Intern": <Briefcase className="w-5 h-5 text-blue-400 mr-2" />,
   "AI Research Volunteer": <Brain className="w-5 h-5 text-blue-400 mr-2" />,
-  // Add more roles with icons here
 };
 
 function ExperienceTimeline() {
+  const lineRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!lineRef.current || !containerRef.current) return;
+
+    gsap.fromTo(
+      lineRef.current,
+      { scaleY: 0 },
+      {
+        scaleY: 1,
+        transformOrigin: "top center",
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top center",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
+
   return (
-    <div className="relative w-full px-4 py-20 bg-black">
-      <h2 className="text-4xl font-bold text-center text-white mb-16">
+    <div ref={containerRef} className="relative w-full px-2 md:px-4 py-20 bg-black">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center text-white mb-16">
         My Learning <span className="text-blue-500">Journey</span>
       </h2>
 
-      <div className="relative mx-auto w-full max-w-4xl">
-        {/* Center line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-500 shadow-blue-500/50 shadow-md" />
+      <div className="relative mx-auto w-full max-w-6xl">
+        {/* Timeline vertical line */}
+        <div
+          ref={lineRef}
+          className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-blue-500 shadow-blue-500/50 shadow-md z-0 origin-top scale-y-0"
+        />
 
         {experienceData
           .slice()
           .reverse()
           .map((exp, index) => {
-            const isRight = index % 2 === 0; // even index = right side
+            const isRight = index % 2 === 0;
             const Icon = icons[exp.role] || null;
 
             return (
-              <motion.div
-                key={index}
-                className="w-full mb-16 flex relative"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                {/* Left side card */}
-                {isRight ? (
-                  <div className="w-1/2" />
-                ) : (
-                  <div className="w-1/2 flex justify-end pr-6">
-                    <div className=" text-white p-6 rounded-xl shadow-lg border border-white/10 max-w-sm text-right backdrop-blur-md hover:shadow-blue-400/40 hover:shadow-xl transition-all duration-300">
+              <div key={index} className="w-full mb-20 flex relative">
+                {/* Left side */}
+                <div className={`w-1/2 hidden sm:flex ${!isRight ? "justify-end pr-4" : ""}`}>
+                  {!isRight && (
+                    <div className="text-white p-4 sm:p-5 md:p-6 rounded-xl shadow-lg border border-white/10 max-w-xs sm:max-w-sm md:max-w-md text-right backdrop-blur-md hover:shadow-blue-400/40 hover:shadow-xl transition-all duration-300">
                       <div className="flex items-center justify-end mb-1">
                         {Icon}
-                        <h3 className="text-xl font-semibold text-blue-400">{exp.role}</h3>
+                        <h3 className="text-lg sm:text-xl font-semibold text-blue-400">
+                          {exp.role}
+                        </h3>
                       </div>
-                      <p className="text-sm text-gray-300">{exp.company}</p>
-                      <p className="text-sm text-gray-400 italic">{exp.date}</p>
-                      <p className="mt-3 text-sm text-gray-200">{exp.description}</p>
+                      <p className="text-xs sm:text-sm text-gray-300">{exp.company}</p>
+                      <p className="text-xs sm:text-sm text-gray-400 italic">{exp.date}</p>
+                      <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-200">
+                        {exp.description}
+                      </p>
                     </div>
+                  )}
+                </div>
+
+                {/* Timeline dot */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-4 z-10">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full border-4 border-blue-500 flex items-center justify-center shadow-md overflow-hidden">
+                    {exp.icon && (
+                      <img
+                        src={exp.icon}
+                        alt={`${exp.company} icon`}
+                        className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+                      />
+                    )}
                   </div>
-                )}
+                </div>
 
-                {/* Timeline Dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-5 w-5 h-5 bg-blue-400 border-4 border-[#0d1117] rounded-full z-10 shadow-blue-500 shadow-sm" />
-
-                {/* Right side card */}
-                {isRight ? (
-                  <div className="w-1/2 flex justify-start pl-6">
-                    <div className=" text-white p-6 rounded-xl shadow-lg border border-white/10 max-w-sm text-left backdrop-blur-md hover:shadow-blue-400/40 hover:shadow-xl transition-all duration-300">
-                      <div className="text-left flex items-center mb-1">
-                        <h3 className="text-xl font-semibold text-blue-400">{exp.role}</h3>
+                {/* Right side */}
+                <div className={`w-1/2 hidden sm:flex ${isRight ? "justify-start pl-4" : ""}`}>
+                  {isRight && (
+                    <div className="text-white p-4 sm:p-5 md:p-6 rounded-xl shadow-lg border border-white/10 max-w-xs sm:max-w-sm md:max-w-md text-left backdrop-blur-md hover:shadow-blue-400/40 hover:shadow-xl transition-all duration-300">
+                      <div className="flex items-center mb-1">
+                        <h3 className="text-lg sm:text-xl font-semibold text-blue-400">
+                          {exp.role}
+                        </h3>
                         {Icon}
                       </div>
-                      <p className="text-sm text-gray-300">{exp.company}</p>
-                      <p className="text-sm text-gray-400 italic">{exp.date}</p>
-                      <p className="mt-3 text-sm text-gray-200">{exp.description}</p>
+                      <p className="text-xs sm:text-sm text-gray-300">{exp.company}</p>
+                      <p className="text-xs sm:text-sm text-gray-400 italic">{exp.date}</p>
+                      <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-200">
+                        {exp.description}
+                      </p>
                     </div>
+                  )}
+                </div>
+
+                {/* Small screen layout */}
+                <div className="sm:hidden w-full flex justify-center mt-6">
+                  <div className="text-white p-4 rounded-xl shadow-lg border border-white/10 max-w-xs text-center backdrop-blur-md hover:shadow-blue-400/40 hover:shadow-xl transition-all duration-300 mt-10">
+                    <div className="flex items-center justify-center mb-1">
+                      {Icon}
+                      <h3 className="text-lg font-semibold text-blue-400">{exp.role}</h3>
+                    </div>
+                    <p className="text-sm text-gray-300">{exp.company}</p>
+                    <p className="text-sm text-gray-400 italic">{exp.date}</p>
+                    <p className="mt-3 text-sm text-gray-200">{exp.description}</p>
                   </div>
-                ) : (
-                  <div className="w-1/2" />
-                )}
-              </motion.div>
+                </div>
+              </div>
             );
           })}
       </div>
