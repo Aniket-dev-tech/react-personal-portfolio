@@ -1,5 +1,5 @@
 import Hero from './components/Hero';
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import SkillSection from './components/SkillSection';
 import Projects from './components/Projects';  
 import About from './components/About';
@@ -11,7 +11,7 @@ import ContactSection from './components/ContactSection'
 function App() {
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* <Navbar /> */}
+      <Navbar />
       <Hero />
       <SkillSection />
       <Projects />
@@ -19,7 +19,6 @@ function App() {
       <ExperienceTimeline />
       <CertificationsSection />
       <ContactSection />
-      {/* Add other components like Contact, Footer, etc. here */}
     </div>
   );
 }

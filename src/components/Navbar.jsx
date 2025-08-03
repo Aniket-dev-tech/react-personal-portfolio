@@ -50,9 +50,9 @@ const Navbar = () => {
             transform: isOpen ? "translateX(-50%)" : "translateX(0)",
           }}
           transition={{ duration: 0.4 }}
-          className="absolute text-xl font-semibold tracking-wide"
+          className="absolute text-xl font-semibold tracking-wide cursor-pointer"
         >
-          Aniket.dev
+          aniket
         </motion.div>
 
         {/* Hamburger Icon */}

@@ -6,6 +6,7 @@ export default {
   ],
   theme: {
     extend: {
+      
       animation: {
         shimmer: "shimmer 2.5s infinite linear",
         "text-glow": "text-glow 2s ease-in-out infinite alternate",

@@ -21,18 +21,18 @@ const experienceData = [
     icon: "/icons/leetcode.svg"
   },
   {
-    role: "Complete Data Science, ML, DL & NLP Bootcamp",
-    company: "Udemy",
-    date: "August 2025 – Present",
-    description: "Learning the complete pipeline of Data Science, Machine Learning, Deep Learning, and NLP through structured lessons, hands-on projects, and real-world case studies to build strong theoretical and practical foundations.",
-    icon: "/icons/udemy-seeklogo.svg"
-  },
-  {
     role: "Introduction to Artificial Intelligence",
     company: "Documentations, Youtube Tutorials",
     date: "",
     description: "Built a foundational understanding of AI concepts, guided by official documentation, YouTube tutorials, and Simplilearn materials, with emphasis on core principles and practical applications.",
     icon: "/icons/ai.svg"
+  },
+  {
+    role: "Complete Data Science, ML, DL & NLP Bootcamp",
+    company: "Udemy",
+    date: "August 2025 – Present",
+    description: "Learning the complete pipeline of Data Science, Machine Learning, Deep Learning, and NLP through structured lessons, hands-on projects, and real-world case studies to build strong theoretical and practical foundations.",
+    icon: "/icons/udemy-seeklogo.svg"
   }
 ];
 

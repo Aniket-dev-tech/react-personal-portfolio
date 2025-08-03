@@ -8,7 +8,7 @@ const CertificationsSection = () => {
 
   return (
     <section id="certifications" className="bg-black py-16 px-6 md:px-12">
-      <h2 className="text-3xl md:text-4xl text-white font-bold mb-8 text-center">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center text-white mb-16">
         <span className="text-blue-400">Certifications</span>
       </h2>
 
