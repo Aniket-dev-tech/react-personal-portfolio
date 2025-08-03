@@ -22,10 +22,10 @@ const experienceData = [
   },
   {
     role: "Introduction to Artificial Intelligence",
-    company: "Documentations, Youtube Tutorials",
-    date: "",
+    company: "Simplilearn, Youtube Tutorials",
+    date: "May 2025",
     description: "Built a foundational understanding of AI concepts, guided by official documentation, YouTube tutorials, and Simplilearn materials, with emphasis on core principles and practical applications.",
-    icon: "/icons/ai.svg"
+    icon: "/icons/simplilearn.png"
   },
   {
     role: "Complete Data Science, ML, DL & NLP Bootcamp",
