@@ -6,6 +6,7 @@ import About from './components/About';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import CertificationsSection from './components/CertificationsSection';
 import ContactSection from './components/ContactSection'
+import Footer from './components/Footer';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <ExperienceTimeline />
       <CertificationsSection />
       <ContactSection />
+      <Footer />
     </div>
   );
 }
