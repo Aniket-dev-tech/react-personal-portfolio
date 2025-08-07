@@ -40,7 +40,7 @@ const SkillGrid = () => {
     <div
       id="skills"
       ref={containerRef}
-      className="w-full min-h-screen bg-black text-white py-16 px-4 flex items-center justify-center"
+      className="w-full min-h-screen text-white py-16 px-4 flex items-center justify-center"
     >
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-10 w-full max-w-screen-xl mx-auto">
         {shuffledSkills.map((skill, index) => (

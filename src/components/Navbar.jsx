@@ -12,8 +12,9 @@ const navItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen((prev) => !prev);
 
   // Close on scroll
   useEffect(() => {
@@ -24,16 +25,23 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isOpen]);
 
-  // Close on click outside
+  // Close on click outside (including excluding the toggle button)
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
         setIsOpen(false);
       }
     };
+
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -56,7 +64,11 @@ const Navbar = () => {
         </motion.div>
 
         {/* Hamburger Icon */}
-        <div className="ml-auto mr-4 md:hidden z-50" onClick={toggleMenu}>
+        <div
+          className="ml-auto mr-4 md:hidden z-50"
+          onClick={toggleMenu}
+          ref={buttonRef}
+        >
           <div className="flex flex-col justify-center items-end gap-[6px] cursor-pointer">
             <motion.span
               animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 6 : 0 }}
@@ -83,7 +95,7 @@ const Navbar = () => {
               exit={{ y: -100, opacity: 0 }}
               transition={{ duration: 0.4 }}
               className="absolute top-16 left-0 w-full flex flex-col bg-black rounded-b-lg items-center space-y-6 py-8 
-              z-50 backdrop-blur-md"
+              z-40 backdrop-blur-md"
             >
               {navItems.map(({ to, label }) => (
                 <Link
