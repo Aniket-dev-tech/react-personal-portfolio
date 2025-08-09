@@ -48,7 +48,7 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <nav className="w-full fixed top-0 z-50 backdrop-blur-md text-white">
+    <nav className="w-full fixed z-50 backdrop-blur-md text-white">
       <div className="h-16 flex items-center justify-between w-full">
         {/* Logo */}
         <motion.div

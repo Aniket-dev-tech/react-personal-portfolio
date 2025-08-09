@@ -3,7 +3,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ProfileImage from "./ProfileImage";
 import HeroText from "./HeroText";
-import Navbar from "./Navbar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +30,6 @@ function Hero() {
 
   return (
     <section className="w-full bg-black relative overflow-hidden" id="hero">
-      <Navbar />
       <div
         ref={heroRef}
         className="mx-auto w-full transition-all duration-500 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#3b82f6] rounded-b-xl"

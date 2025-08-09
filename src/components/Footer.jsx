@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import avatar from "../assets/avatar.jpg"; // Update with correct path
 import TextScroll from "./TextScroll";
 import { Link } from "react-scroll";
+import RotatingText from "../animated-components/RotatingText";
 
 const Footer = () => {
   const scrollRef = useRef(null);
@@ -22,7 +23,7 @@ const Footer = () => {
       {/* Top Scrolling Text */}
       <div className="overflow-hidden" ref={scrollRef}>
         <TextScroll
-          text="Let’s work together • Your idea, brought to life • Let’s work together •"
+          text="Let’s work together • Your idea, brought to life • Let’s Collaborate •"
           default_velocity={2}
           className="text-5xl sm:text-4xl md:text-6xl lg:text-8xl font-semibold uppercase tracking-tighter  mb-20"
         />
@@ -33,8 +34,20 @@ const Footer = () => {
 
       {/* Footer Content Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 text-sm sm:text-base">
-        {/* Logo */}
-        <div className="font-semibold text-lg sm:text-xl">aniket</div>
+        <div className= "font-semibold text-lg sm:text-xl">
+          <RotatingText
+            texts={["Video Games", "Music", "Chess"]}
+            mainClassName="px-2 sm:px-2 md:px-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+            staggerFrom={"last"}
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-120%" }}
+            staggerDuration={0.025}
+            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+            rotationInterval={2000}
+          />
+        </div>
 
         {/* Menu */}
         <div>
