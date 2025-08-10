@@ -42,7 +42,7 @@ const HeroText = () => {
   }, []);
 
   return (
-    <div className="max-w-2xl w-full space-y-6 text-left md:text-left text-center md:text-start">
+    <div className="max-w-2xl w-full space-y-6 md:text-left text-center">
       <h1 className="text-[clamp(2rem,5vw,4.5rem)] font-extrabold leading-tight tracking-tight text-white">
         Hi, I’m{" "}
         <span className="relative inline-block bg-gradient-to-r from-cyan-300 via-blue-500 to-purple-500 bg-clip-text text-transparent animate-shimmer font-bold">

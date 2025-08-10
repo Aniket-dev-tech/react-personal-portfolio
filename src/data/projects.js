@@ -6,7 +6,7 @@ const projects = [
     technologies: ["ReactJs", "Puter.js", "TailwindCSS"],
     link: "https://puter.com/app/resumind-ai-resume-analyzer-2",
     github: "https://github.com/Aniket-dev-tech/ai-resume-analyzer",
-    category: 'Web Development'
+    category: 'AI'
   },
   {
     title: "AI Image Enhancer",
@@ -15,6 +15,15 @@ const projects = [
     technologies: ["React", "Tailwind", "PicWish API"],
     link: "https://your-app-link.com",
     github: "https://github.com/yourusername/image-enhancer",
+    category: 'AI'
+  },
+  {
+    title: "Employee Management System",
+    description: "Ongoing, An Efficient Employee Management System where employer can give tasks, and manage the records of the employees",
+    image: "/images/EMS.png",
+    technologies: ["React", "Tailwind", "localStorage"],
+    link: "#",
+    github: "https://github.com/Aniket-dev-tech/Employee-Management-System",
     category: 'Web Development'
   },
   
