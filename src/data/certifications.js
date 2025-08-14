@@ -2,6 +2,11 @@
 const certifications = [
   {
       id: 5,
+      title: "Full Stack Web Development",
+      image: "./certificates/Udemy-Full-Stack Web Development Bootcamp.jpg",
+  },
+  {
+      id: 6,
       title: "Introduction to AI",
       image: "./certificates/Simplilearn-AI-Certificate.png",
   },
