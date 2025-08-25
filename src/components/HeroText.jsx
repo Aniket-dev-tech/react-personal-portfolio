@@ -73,7 +73,7 @@ const HeroText = () => {
       <div className="w-full flex flex-col sm:flex-row sm:gap-5 sm:justify-start justify-center items-center sm:items-start">
         <div className="mt-4">
           <a
-            href="/Aniket_Resume_New.pdf"
+            href="/public/Aniket_Final_Resume_New.pdf"
             download="Aniket_Resume.pdf"
             className="inline-block px-6 py-2 text-sm md:text-base font-semibold rounded-full bg-transparent border border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-black transition-all duration-300 shadow-[0_0_12px_rgba(34,211,238,0.6)]"
           >
